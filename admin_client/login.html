@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/app-assets/css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" id="login" name="login-form">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input name="username" type="username" class="form__input" autofocus placeholder="Enter Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input name="password" type="password" class="form__input" autofocus placeholder="Enter Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit" name="login">Login</button>
+        </form>
+    </div>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            handleSubmit();
+        })
+        function handleSubmit() {
+            var btnSubmit = document.forms['login-form']['login'];
+            var txtUn = document.forms['login-form']['username'];
+            var txtPs = document.forms['login-form']['password'];
+
+            if (btnSubmit) {
+                btnSubmit.onclick = function (event) {
+                    event.preventDefault();
+                    var username = txtUn.value;
+                    var password = txtPs.value;
+
+                    if (username === "") {
+                        txtUn.placeholder = 'Username missing';
+                        txtUn.classList.add('warn');
+                    }
+                    else if (password === "") {
+                        txtPs.placeholder = 'Password missing'
+                        txtPs.classList.add('warn');
+                    }
+                    var obj = {
+                        "username": username,
+                        "password": password
+                    }
+
+                    var dataToSend = JSON.stringify(obj);
+                    var xmlHttpRequest = new XMLHttpRequest();
+                    xmlHttpRequest.onreadystatechange = function () {
+                        if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+                            var jsonResult = JSON.parse(xmlHttpRequest.responseText);
+                            console.log(jsonResult);
+                            var element = jsonResult.accessToken;
+                            console.log(element);
+                            handleAccessToken(element);
+
+                        }
+                    }
+                    xmlHttpRequest.open('POST', 'http://localhost:8081/api/v1/login');
+                    xmlHttpRequest.setRequestHeader('Content-Type', 'application/json');
+                    xmlHttpRequest.send(dataToSend);
+                }
+            }
+        }
+        function handleAccessToken(token) {
+            var xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.onreadystatechange = function () {
+                if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+                    var jsonResult = JSON.parse(xmlHttpRequest.responseText);
+                    console.log(jsonResult)
+                    window.sessionStorage.setItem('usernameAdmin', jsonResult.username);
+                    window.sessionStorage.setItem('roleAdmin', jsonResult.role.name);
+                    window.sessionStorage.setItem('fullNameAdmin', jsonResult.fullName);
+                    window.sessionStorage.setItem('id', jsonResult.id);
+                    window.sessionStorage.setItem('thumbnailAvtAdmin', jsonResult.thumbnailAvt);
+                    window.sessionStorage.setItem('accessToken', token);
+                    if (jsonResult.role.name === "ADMIN") {
+                        window.location.href = "/home.html";
+
+                    } else {
+                        alert("You don't have permission !!!")
+                    }
+
+                }
+            }
+            xmlHttpRequest.open('GET', 'http://localhost:8081/api/v1/users/profile');
+            xmlHttpRequest.setRequestHeader('Authorization', `Bearer ${token}`);
+            xmlHttpRequest.send();
+        } 
+    </script>
+</body>
