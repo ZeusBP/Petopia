@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.order.PaymentBankTransferActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutHeaderPayment"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:elevation="20dp"
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Pay by bank transfer"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="190dp"
+            android:text="Please transfer cash to the account numbers below.
+            Please fill in the deposit information according to the syntax:"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="250dp"
+            android:text="Petopia_UserId_OrderId"
+            android:textColor="@color/white"
+            android:textStyle="italic|bold"
+            android:textSize="18sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/PhucNguyen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="8dp"
+        android:layout_below="@id/layoutHeaderPayment"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/ivTechcombank"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/techcombank"/>
+
+            <TextView
+                android:id="@+id/Techcombank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ivTechcombank"
+                android:layout_marginLeft="110dp"
+                android:text="Techcombank"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/Name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ivTechcombank"
+                android:layout_below="@+id/Techcombank"
+                android:layout_marginLeft="110dp"
+                android:text="Nguyen Ngoc Bao Phuc"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/Stk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ivTechcombank"
+                android:layout_below="@+id/Name1"
+                android:layout_marginLeft="110dp"
+                android:text="19037171840011"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                />
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_to_right"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/PhamMinh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="8dp"
+        android:layout_below="@id/PhucNguyen"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/ivMbBank"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/mbank" />
+
+            <TextView
+                android:id="@+id/MbBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ivMbBank"
+                android:layout_marginLeft="110dp"
+                android:text="MB Bank"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MbBank"
+                android:layout_alignLeft="@+id/ivMbBank"
+                android:layout_marginLeft="110dp"
+                android:text="Pham Duc Minh"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/Stk2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Name2"
+                android:layout_alignLeft="@+id/ivMbBank"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="5dp"
+                android:text="0000193492002"
+                android:textSize="18sp" />
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_to_right"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border_btn_add_cart_background"
+        android:text="complete"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</RelativeLayout>

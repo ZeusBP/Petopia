@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="230dp"
+        android:layout_gravity="center_horizontal">
+
+<!--        <CheckBox-->
+<!--            android:layout_width="20dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:background="@drawable/ic_favorite_background"-->
+<!--            android:backgroundTint="@color/decline"-->
+<!--            android:button="@null"-->
+<!--            android:checked="false"-->
+<!--            tools:ignore="TouchTargetSizeCheck"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginRight="10dp"/>-->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivCover"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignBottom="@+id/tvPetName"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/item_pet"
+            app:civ_border_color="#F6F3F3"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/tvPetName"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="150dp"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="Chow Chow Ngoc Nghech"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/textType"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_below="@id/tvPetName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/pet_location" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPetName"
+            android:layout_toRightOf="@id/textType"
+            android:maxLines="1"
+            android:text="HaNoi, VietNam"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

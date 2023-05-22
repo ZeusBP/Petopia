@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.WelcomeActivity"
+    android:orientation="vertical"
+    android:weightSum="100">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:text="Welcome to"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textColor="@color/background_bold"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:paddingTop="50dp"
+        />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"/>
+    <RelativeLayout
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30">
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/client_button_login"
+            android:text="Sign up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnRegister"
+            android:layout_marginTop="15dp"
+            android:text="Already a member? "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnRegister"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/tvText"
+            android:text="Sign in"
+            android:textColor="@color/background"
+            android:textSize="20dp" />
+    </RelativeLayout>
+</LinearLayout>

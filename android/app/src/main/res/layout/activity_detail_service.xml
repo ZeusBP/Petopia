@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.service.DetailServiceActivity">
+    <Button
+        android:id="@+id/btnBackShop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_back_button"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageView
+        android:id="@+id/ivCover"
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        android:src="@drawable/item_pet"
+        android:layout_gravity="top"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/item_pet_background">
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvServiceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chow Chow Ngoc Ngech"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvServiceLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvServiceName"
+                android:layout_marginTop="6dp"
+                android:text="Ha Noi, Viet Nam"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/heart" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/textType"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/pet_location" />
+
+            <TextView
+                android:id="@+id/tvServiceEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/textType"
+                android:maxLines="1"
+                android:text="CauGiay,HaNoi, VietNam"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/textPrice"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/phone"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/textPrice"
+                android:paddingBottom="5dp"
+                android:text="01297652214"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Summary"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/tvServiceDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chó Chow Chow (thường gọi tắt là Chow là một giống chó có nguồn gốc ở phía Bắc Trung Quốc,[3] nơi đây nó được gọi là Tông sư khuyển (Pinyin: 鬆獅犬), có nghĩa là chó sư tử xù. Giống chó này cũng được gọi là Đường Khuyển, chó của đời nhà Đường.Người ta tin rằng Chow Chow là một trong những con chó bản địa được dùng làm hình mẫu cho tượng đá nghê trấn giữ phía trước cửa chùa Phật giáo và cung đình. Đây là một trong số ít các giống chó cổ xưa vẫn còn tồn tại trong thế giới ngày nay.[6]"
+                android:layout_marginTop="10dp"
+                android:maxLines="10"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivOwner"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/person" />
+
+            <TextView
+                android:id="@+id/tvOwner_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ivOwner"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="10dp"
+                android:text="Đào Hồng Ngọc"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/item_pet_contact_button"
+                android:text="Contact me"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

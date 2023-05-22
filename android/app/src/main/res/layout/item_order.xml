@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginBottom="10dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/border_item_order"
+    android:gravity="center_vertical">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/ivCover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cat_img"
+        app:riv_corner_radius="5dp"
+        android:elevation="10dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/ivCover"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Name"
+            android:textColor="#525252"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_marginTop="4dp"
+            android:text="Type :"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_alignLeft="@+id/Type"
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="4dp"
+            android:text="Loai san pham"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Type"
+            android:layout_marginTop="10dp"
+            android:text="0đ"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="66dp"
+            android:text="x 1" />
+
+
+    </RelativeLayout>
+</LinearLayout>
